@@ -4,6 +4,7 @@ emoji: "🌿"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [Latex,Overleaf]
 published: true
+published_at: "2023-02-11 00:00"
 ---
 ## はじめに
 私が所属している研究室では、論文執筆に Overleaf を利用しています。

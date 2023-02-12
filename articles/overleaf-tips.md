@@ -25,7 +25,7 @@ $bibtex = 'pbibtex';
 $dvipdf = 'dvipdfmx %O -o %D %S';
 $makeindex = 'mendex %O -o %D %S';
 ```
-4. `\documentclass{}`を確認
+4. `\documentclass{}`を確認する
 学会のテンプレートでは既に設定されいると思いますが、念の為確認しておきましょう。文章クラスの種類については[こちら](https://medemanabu.net/latex/documentclass/)にまとまっていました。和文のクラスであれば問題ないです。
 
 https://ja.overleaf.com/learn/latex/Japanese

@@ -4,7 +4,7 @@ emoji: "🌿"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [LaTeX,Overleaf]
 published: true
-published_at: "2023-02-10 00:00"
+published_at: "2023-02-12 00:00"
 ---
 ## はじめに
 私が所属している研究室では、論文執筆に Overleaf を利用しています。Overleaf はインストール不要で LaTeX が使えるオンラインエディタです。環境構築がないので導入ハードルは低いのですが、 LaTeX のお作法や Overleaf の仕様に戸惑うことが多いです（私がそうでした😅）。
@@ -12,7 +12,37 @@ published_at: "2023-02-10 00:00"
 
 https://ja.overleaf.com/
 
-<!-- ## 日本語の利用 -->
+## 日本語の入力
+プロジェクト開始時の状態では日本語を利用することができません。コンパイラが日本語を読み込めないためです。日本語で論文を執筆する際は下記を設定してみましょう。
+1. 左上メニューからコンパイラを LaTeX に設定する
+2. プロジェクトのルートディレクトリに `latexmkrc` というファイルを作成する
+拡張子は不要です。コンパイル時の手順を定義するファイルです。（Makefile 的なものという認識です🤔）
+3. `latexmkrc` ファイルに下記を記述する
+一旦無心でコピペしましょう。詳細については後ほど解説します。
+```
+$latex = 'platex';
+$bibtex = 'pbibtex';
+$dvipdf = 'dvipdfmx %O -o %D %S';
+$makeindex = 'mendex %O -o %D %S';
+```
+4. `\documentclass{}`を確認
+学会のテンプレートでは既に設定されいると思いますが、念の為確認しておきましょう。文章クラスの種類については[こちら](https://medemanabu.net/latex/documentclass/)にまとまっていました。和文のクラスであれば問題ないです。
+
+https://ja.overleaf.com/learn/latex/Japanese
+
+### latexmkrc の中身が知りたい
+日本語は入力できるようになったけど、`latexmkrc` の中身を理解せずに使うのは嫌だ！という私のために何を設定しているのか説明します。
+- `$latex`
+`.tex` ファイルをコンパイルする際のコマンドを指定します。日本語をコンパイルする際は `platex` が一般的みたいです。
+- `$bibtex`
+`.bib` ファイルをコンパイルする際のコマンドを指定します。日本語をコンパイルする際は `pbibtex` が一般的みたいです。
+- `$dvipdf`
+`latex` が出力した`DVI` ファイルを PDF に変換するコマンドを指定します。日本語を変換する際は `dvipdfmx` が一般的みたいです。
+- `$makeindex`
+索引を作成するコマンドを指定します。 `\usepackage{makeindex}` 利用時に必要だそう。
+<!-- TODO: オプションについて調べてまとめる `%O`とか`%D`とか`%S -->
+
+http://www2.yukawa.kyoto-u.ac.jp/~koudai.sugimoto/dokuwiki/doku.php?id=latex:latexmk%E3%81%AE%E8%A8%AD%E5%AE%9A
 
 ## 表の作成
 ### GUI で作成

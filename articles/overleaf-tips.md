@@ -44,9 +44,18 @@ https://ja.overleaf.com/learn/latex/Japanese
 
 http://www2.yukawa.kyoto-u.ac.jp/~koudai.sugimoto/dokuwiki/doku.php?id=latex:latexmk%E3%81%AE%E8%A8%AD%E5%AE%9A
 
+## 基本のコマンド
+### 文字
+|コマンド|意味|
+|----|----|
+|\textbf{}      |太字|
+|\textit{}      |斜体|
+|\underline{}   |下線|
+
 ## 表の作成
 ### GUI で作成
 エディタよりもGUIで表を作成したい方は [Tables Generator](https://www.tablesgenerator.com/) がオススメです。エクセルの要領で表を作成できますし、とりあえず表を作成して叩き台にするという使い方もできます。
+Booktabs table style を選択すると罫線が控えめな美しい表を作成できます✨
 https://www.tablesgenerator.com/
 
 ## 参考文献

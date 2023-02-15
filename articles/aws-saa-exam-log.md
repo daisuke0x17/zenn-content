@@ -1,5 +1,5 @@
 ---
-title: "AWS SAA-C03 受験記"
+title: "AWS SAA-C03 受験記録と勉強方法"
 emoji: "💮"
 type: "idea" # tech: 技術記事 / idea: アイデア
 topics: [AWS,SAA]

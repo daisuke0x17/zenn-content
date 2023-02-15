@@ -53,9 +53,9 @@ http://www2.yukawa.kyoto-u.ac.jp/~koudai.sugimoto/dokuwiki/doku.php?id=latex:lat
 ```
 |コマンド|意味|
 |----|----|
-|\textbf{}      |太字|
-|\textit{}      |斜体|
-|\underline{}   |下線|
+|`\textbf{}`      |太字|
+|`\textit{}`      |斜体|
+|`\underline{}`   |下線|
 
 ## 表の作成
 ### GUI で作成

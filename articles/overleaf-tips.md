@@ -46,6 +46,11 @@ http://www2.yukawa.kyoto-u.ac.jp/~koudai.sugimoto/dokuwiki/doku.php?id=latex:lat
 
 ## 基本のコマンド
 ### 文字
+```
+これは\textbf{太字}です。
+これは\testit{斜体}です。
+これは\underline{下線}です。
+```
 |コマンド|意味|
 |----|----|
 |\textbf{}      |太字|

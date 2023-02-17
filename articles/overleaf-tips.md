@@ -48,8 +48,8 @@ http://www2.yukawa.kyoto-u.ac.jp/~koudai.sugimoto/dokuwiki/doku.php?id=latex:lat
 ### 文字
 ```
 これは\textbf{太字}です。
-これは\testit{斜体}です。
-これは\underline{下線}です。
+こうすると\testit{斜体}になります。
+重要な箇所は\underline{下線}を引いてもよいでしょう。
 ```
 |コマンド|意味|
 |----|----|
@@ -57,10 +57,35 @@ http://www2.yukawa.kyoto-u.ac.jp/~koudai.sugimoto/dokuwiki/doku.php?id=latex:lat
 |`\textit{}`      |斜体|
 |`\underline{}`   |下線|
 
+### リスト
+#### 箇条書き
+```
+\begin{itemize}
+    \item Go
+    \item TypeScript
+    \item Python
+\end{itemize}
+```
+#### 番号付きリスト
+```
+\begin{enumerate}
+  \item フシギダネ
+  \item フシギソウ
+  \item フシギバナ
+\end{enumerate}
+```
+### チャプターとセクション
+```
+\chapter{これはチャプターです}
+
+\section{こうするとセクションになります}
+\subsection{サブセクションも作れますよ}
+```
+
 ## 表の作成
 ### GUI で作成
 エディタよりもGUIで表を作成したい方は [Tables Generator](https://www.tablesgenerator.com/) がオススメです。エクセルの要領で表を作成できますし、とりあえず表を作成して叩き台にするという使い方もできます。
-Booktabs table style を選択すると罫線が控えめな美しい表を作成できます✨
+**Booktabs table style** を選択すると美しい表が作成できます✨
 https://www.tablesgenerator.com/
 
 ## 参考文献

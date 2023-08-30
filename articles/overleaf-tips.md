@@ -45,6 +45,27 @@ https://ja.overleaf.com/learn/latex/Japanese
 http://www2.yukawa.kyoto-u.ac.jp/~koudai.sugimoto/dokuwiki/doku.php?id=latex:latexmk%E3%81%AE%E8%A8%AD%E5%AE%9A
 
 ## 基本のコマンド
+### 段落・改行
+#### 段落
+2つの方法で段落を作成できます。
+1. 空行を一行挟む
+2. `\par` を利用する
+```
+私はポケモンGoが大好きです。都会に住んでレイドにたくさん参加したいです。
+
+私は水泳も大好きです。陸にいるより水に浸かっていたい。
+でも陸でバイクに乗ることも好きです。風を切るのが気持ちい。\par
+空の行を一行挟むか\verb|\par|で段落を作ることができます。
+```
+![](/images/overleaf-tips/ex-par.png)
+
+#### 改行
+```
+こうすると段落内で\\強制的に改行することができます。
+```
+![](/images/overleaf-tips/ex-new-line.png)
+
+
 ### 文字
 ```
 これは\textbf{太字}です。
@@ -53,7 +74,7 @@ http://www2.yukawa.kyoto-u.ac.jp/~koudai.sugimoto/dokuwiki/doku.php?id=latex:lat
 ```
 ![](/images/overleaf-tips/ex-char.png)
 
-### リスト
+### 箇条書き・リスト
 #### 箇条書き
 ```
 \begin{itemize}
@@ -73,7 +94,7 @@ http://www2.yukawa.kyoto-u.ac.jp/~koudai.sugimoto/dokuwiki/doku.php?id=latex:lat
 ```
 ![](/images/overleaf-tips/ex-num-list.png)
 
-### セクションとサブセクション
+### セクション・サブセクション
 ```
 \section{こうするとセクションになります}
 \subsection{サブセクションも作れますよ}

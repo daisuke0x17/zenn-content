@@ -14,9 +14,9 @@ https://ja.overleaf.com/
 
 ## 日本語の入力
 プロジェクト開始時の状態では日本語を利用することができません。コンパイラが日本語を読み込めないためです。日本語で論文を執筆する際は下記を設定してみましょう。
-1. 左上メニューからコンパイラを LaTeX に設定する
+1. 左上メニューからコンパイラを`LaTeX`に設定する
 2. プロジェクトのルートディレクトリに `latexmkrc` というファイルを作成する
-拡張子は不要です。コンパイル時の手順を定義するファイルです。（Makefile 的なものという認識です🤔）
+**拡張子は不要**です。コンパイル時の手順を定義するファイルです。（Makefile 的なものという認識です🤔）
 3. `latexmkrc` ファイルに下記を記述する
 一旦無心でコピペしましょう。詳細については後ほど解説します。
 ```
@@ -48,14 +48,10 @@ http://www2.yukawa.kyoto-u.ac.jp/~koudai.sugimoto/dokuwiki/doku.php?id=latex:lat
 ### 文字
 ```
 これは\textbf{太字}です。
-こうすると\testit{斜体}になります。
+こうすると\textit{SYATAI}になります。
 重要な箇所は\underline{下線}を引いてもよいでしょう。
 ```
-|コマンド|意味|
-|----|----|
-|`\textbf{}`      |太字|
-|`\textit{}`      |斜体|
-|`\underline{}`   |下線|
+![](/images/overleaf-tips/ex-char.png)
 
 ### リスト
 #### 箇条書き
@@ -66,6 +62,7 @@ http://www2.yukawa.kyoto-u.ac.jp/~koudai.sugimoto/dokuwiki/doku.php?id=latex:lat
     \item Python
 \end{itemize}
 ```
+![](/images/overleaf-tips/ex-list.png)
 #### 番号付きリスト
 ```
 \begin{enumerate}
@@ -74,18 +71,22 @@ http://www2.yukawa.kyoto-u.ac.jp/~koudai.sugimoto/dokuwiki/doku.php?id=latex:lat
   \item フシギバナ
 \end{enumerate}
 ```
-### チャプターとセクション
-```
-\chapter{これはチャプターです}
+![](/images/overleaf-tips/ex-num-list.png)
 
+### セクションとサブセクション
+```
 \section{こうするとセクションになります}
 \subsection{サブセクションも作れますよ}
+\subsubsection{サブのサブも作れます}
 ```
+![](/images/overleaf-tips/ex-section.png)
 
 ## 表の作成
 ### GUI で作成
 エディタよりもGUIで表を作成したい方は [Tables Generator](https://www.tablesgenerator.com/) がオススメです。エクセルの要領で表を作成できますし、とりあえず表を作成して叩き台にするという使い方もできます。
 **Booktabs table style** を選択すると美しい表が作成できます✨
+![](/images/overleaf-tips/ex-tables-generator.png)
+
 https://www.tablesgenerator.com/
 
 ## 参考文献

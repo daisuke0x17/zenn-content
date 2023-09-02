@@ -16,7 +16,7 @@ https://ja.overleaf.com/
 プロジェクト開始時の状態では日本語を利用することができません。コンパイラが日本語を読み込めないためです。日本語で論文を執筆する際は下記を設定してみましょう。
 1. 左上メニューからコンパイラを`LaTeX`に設定する
 2. プロジェクトのルートディレクトリに `latexmkrc` というファイルを作成する
-**拡張子は不要**です。コンパイル時の手順を定義するファイルです。（Makefile 的なものという認識です🤔）
+**拡張子は不要**です。コンパイル時の手順を定義するファイルです。
 3. `latexmkrc` ファイルに下記を記述する
 一旦無心でコピペしましょう。詳細については後ほど解説します。
 ```
@@ -31,13 +31,13 @@ $makeindex = 'mendex %O -o %D %S';
 https://ja.overleaf.com/learn/latex/Japanese
 
 ### latexmkrc の中身が知りたい
-日本語は入力できるようになったけど、`latexmkrc` の中身を理解せずに使うのは嫌だ！という私のために何を設定しているのか説明します。
+日本語は入力できるようになったけど、`latexmkrc` の中身を理解せずに使うのは嫌だ！という私のために何を設定しているのか調べてみました。
 - `$latex`
-`.tex` ファイルをコンパイルする際のコマンドを指定します。日本語をコンパイルする際は `platex` が一般的みたいです。
+`.tex` ファイルをコンパイルする際のコマンドを指定します。日本語をコンパイルする際は `platex` を指定する。
 - `$bibtex`
-`.bib` ファイルをコンパイルする際のコマンドを指定します。日本語をコンパイルする際は `pbibtex` が一般的みたいです。
+`.bib` ファイルをコンパイルする際のコマンドを指定します。日本語をコンパイルする際は `pbibtex` を指定する。
 - `$dvipdf`
-`latex` が出力した`DVI` ファイルを PDF に変換するコマンドを指定します。日本語を変換する際は `dvipdfmx` が一般的みたいです。
+`latex` が出力した`DVI` ファイルを PDF に変換するコマンドを指定します。日本語を変換する際は `dvipdfmx` を指定する。
 - `$makeindex`
 索引を作成するコマンドを指定します。 `\usepackage{makeindex}` 利用時に必要だそう。
 <!-- TODO: オプションについて調べてまとめる `%O`とか`%D`とか`%S -->
@@ -45,7 +45,15 @@ https://ja.overleaf.com/learn/latex/Japanese
 http://www2.yukawa.kyoto-u.ac.jp/~koudai.sugimoto/dokuwiki/doku.php?id=latex:latexmk%E3%81%AE%E8%A8%AD%E5%AE%9A
 
 ## 基本のコマンド
-### 段落・改行
+### セクションとサブセクション
+```
+\section{こうするとセクションになります}
+\subsection{サブセクションも作れますよ}
+\subsubsection{サブのサブも作れます}
+```
+![](/images/overleaf-tips/ex-section.png)
+
+### 段落と改行
 #### 段落
 2つの方法で段落を作成できます。
 1. 空行を一行挟む
@@ -65,7 +73,6 @@ http://www2.yukawa.kyoto-u.ac.jp/~koudai.sugimoto/dokuwiki/doku.php?id=latex:lat
 ```
 ![](/images/overleaf-tips/ex-new-line.png)
 
-
 ### 文字
 ```
 これは\textbf{太字}です。
@@ -74,7 +81,7 @@ http://www2.yukawa.kyoto-u.ac.jp/~koudai.sugimoto/dokuwiki/doku.php?id=latex:lat
 ```
 ![](/images/overleaf-tips/ex-char.png)
 
-### 箇条書き・リスト
+### 箇条書きと番号付きリスト
 #### 箇条書き
 ```
 \begin{itemize}
@@ -84,6 +91,21 @@ http://www2.yukawa.kyoto-u.ac.jp/~koudai.sugimoto/dokuwiki/doku.php?id=latex:lat
 \end{itemize}
 ```
 ![](/images/overleaf-tips/ex-list.png)
+
+#### 入れ子の箇条書き
+箇条書きは入れ子にすることができます。
+```
+\begin{itemize}
+    \item Go
+      \begin{itemize}
+        \item Gin
+        \item Echo
+      \end{itemize}
+    \item TypeScript
+\end{itemize}
+```
+![](/images/overleaf-tips/ex-nested-list.png)
+
 #### 番号付きリスト
 ```
 \begin{enumerate}
@@ -94,16 +116,48 @@ http://www2.yukawa.kyoto-u.ac.jp/~koudai.sugimoto/dokuwiki/doku.php?id=latex:lat
 ```
 ![](/images/overleaf-tips/ex-num-list.png)
 
-### セクション・サブセクション
+#### 入れ子の番号付きリスト
+番号付きリストは入れ子にすることができます。
 ```
-\section{こうするとセクションになります}
-\subsection{サブセクションも作れますよ}
-\subsubsection{サブのサブも作れます}
+\begin{enumerate}
+  \item フシギダネ
+    \begin{enumerate}
+      \item たねポケモン
+      \item くさ・どく
+    \end{enumerate}
+  \item フシギソウ
+\end{enumerate}
 ```
-![](/images/overleaf-tips/ex-section.png)
+![](/images/overleaf-tips/ex-nested-num-list.png)
 
 ## 表の作成
-### GUI で作成
+エクセルのようなシンプルな表は下記のように作成できます。
+個人的には、後述する[booktabs パッケージを利用する](#booktabs-パッケージを利用する)とより LaTeX らしい表を作成できるのでそちらをオススメします。
+```
+\begin{tabular}{|c|c|c|c|} \hline
+  & 分類   & タイプ & 特性    \\ \hline
+  ゼニガメ  & かめのこ & みず  & げきりゅう \\
+  カメール  & かめ   & みず  & げきりゅう \\
+  カメックス & こうら  & みず  & げきりゅう \\ \hline
+\end{tabular}
+```
+![](/images/overleaf-tips/ex-default-table.png)
+
+### booktabs パッケージを利用する
+`booktabs` パッケージを利用すると、より LaTeX 美しい表を作成できます。`\toprule`、`\midrule`、`\bottomrule` で表の上下に線を引くことができます。
+注意点としては **`\usepackage{booktabs}`** の追加を忘れないことです。[Tables Generatorで表を作成する](#tables-generatorで表を作成する)と簡単です。
+```
+\begin{tabular}{@{}cccrrc@{}}
+  \toprule
+        & 分類   & タイプ & \multicolumn{1}{c}{高さ (m)} & \multicolumn{1}{c}{重さ (kg)} & 特性    \\ \midrule
+  ゼニガメ  & かめのこ & みず  & 0.5                        & 9.0                         & げきりゅう \\
+  カメール  & かめ   & みず  & 1.0                        & 22.5                        & げきりゅう \\
+  カメックス & こうら  & みず  & 1.6                        & 85.5                        & げきりゅう \\ \bottomrule
+\end{tabular}
+```
+![](/images/overleaf-tips/ex-table.png)
+
+### Tables Generatorで表を作成する
 エディタよりもGUIで表を作成したい方は [Tables Generator](https://www.tablesgenerator.com/) がオススメです。エクセルの要領で表を作成できますし、とりあえず表を作成して叩き台にするという使い方もできます。
 **Booktabs table style** を選択すると美しい表が作成できます✨
 ![](/images/overleaf-tips/ex-tables-generator.png)

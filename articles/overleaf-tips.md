@@ -167,7 +167,7 @@ $$
 | $$\theta \space \Theta$$ | `\theta` | `\Theta` | $$\pi \space \Pi$$ | `\pi` | `\Pi` | $$\omega \space \Omega$$ | `\omega` | `\Omega` |
 
 ## 表の作成
-エクセルのようなシンプルな表は下記のように作成できます。
+エクセル風のシンプルな表は下記のように作成できます。
 個人的には、後述する[booktabs パッケージを利用する](#booktabs-パッケージを利用する)とより LaTeX らしい表を作成できるのでそちらをオススメします。
 ```
 \begin{tabular}{|c|c|c|c|} \hline
@@ -180,7 +180,7 @@ $$
 ![](/images/overleaf-tips/ex-default-table.png)
 
 ### booktabs パッケージを利用する
-`booktabs` パッケージを利用すると、より LaTeX 美しい表を作成できます。`\toprule`、`\midrule`、`\bottomrule` で表の上下に線を引くことができます。
+`booktabs` パッケージを利用すると、より LaTeX らしい表を作成できます。`\toprule`、`\midrule`、`\bottomrule` で表の上下に線を引くことができます。
 注意点としては **`\usepackage{booktabs}`** の追加を忘れないことです。[Tables Generatorで表を作成する](#tables-generatorで表を作成する)と簡単です。
 ```
 \begin{tabular}{@{}cccrrc@{}}
@@ -194,7 +194,7 @@ $$
 ![](/images/overleaf-tips/ex-table.png)
 
 ### Tables Generatorで表を作成する
-エディタよりもGUIで表を作成したい方は [Tables Generator](https://www.tablesgenerator.com/) がオススメです。エクセルの要領で表を作成できますし、とりあえず表を作成して叩き台にするという使い方もできます。
+エディタよりもGUIで表を作成したい方は [Tables Generator](https://www.tablesgenerator.com/) がオススメです。マウスでポチポチして表を作成できますし、とりあえず表を作成して叩き台にするという使い方もできます。
 **Booktabs table style** を選択すると美しい表が作成できます✨
 ![](/images/overleaf-tips/ex-tables-generator.png)
 

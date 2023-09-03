@@ -45,7 +45,7 @@ https://ja.overleaf.com/learn/latex/Japanese
 http://www2.yukawa.kyoto-u.ac.jp/~koudai.sugimoto/dokuwiki/doku.php?id=latex:latexmk%E3%81%AE%E8%A8%AD%E5%AE%9A
 
 ## 基本のコマンド
-### セクションとサブセクション
+### セクション・サブセクション
 ```
 \section{こうするとセクションになります}
 \subsection{サブセクションも作れますよ}
@@ -53,8 +53,7 @@ http://www2.yukawa.kyoto-u.ac.jp/~koudai.sugimoto/dokuwiki/doku.php?id=latex:lat
 ```
 ![](/images/overleaf-tips/ex-section.png)
 
-### 段落と改行
-#### 段落
+### 段落
 2つの方法で段落を作成できます。
 1. 空行を一行挟む
 2. `\par` を利用する
@@ -67,7 +66,7 @@ http://www2.yukawa.kyoto-u.ac.jp/~koudai.sugimoto/dokuwiki/doku.php?id=latex:lat
 ```
 ![](/images/overleaf-tips/ex-par.png)
 
-#### 改行
+### 改行
 ```
 こうすると段落内で\\強制的に改行することができます。
 ```
@@ -81,8 +80,14 @@ http://www2.yukawa.kyoto-u.ac.jp/~koudai.sugimoto/dokuwiki/doku.php?id=latex:lat
 ```
 ![](/images/overleaf-tips/ex-char.png)
 
-### 箇条書きと番号付きリスト
-#### 箇条書き
+#### 上付き文字・下付き文字
+```
+これは\textsuperscript{上付き文字}です。
+こうすると\textsubscript{下付き文字}になります。
+```
+![](/images/overleaf-tips/ex-sup-sub.png)
+
+### 箇条書き
 ```
 \begin{itemize}
     \item Go
@@ -106,7 +111,7 @@ http://www2.yukawa.kyoto-u.ac.jp/~koudai.sugimoto/dokuwiki/doku.php?id=latex:lat
 ```
 ![](/images/overleaf-tips/ex-nested-list.png)
 
-#### 番号付きリスト
+### 番号付きリスト
 ```
 \begin{enumerate}
   \item フシギダネ
@@ -129,6 +134,37 @@ http://www2.yukawa.kyoto-u.ac.jp/~koudai.sugimoto/dokuwiki/doku.php?id=latex:lat
 \end{enumerate}
 ```
 ![](/images/overleaf-tips/ex-nested-num-list.png)
+
+## 数式
+#### インライン数式
+文章中に数式を埋め込むときに利用します。`$` で囲みます。
+```
+2次方程式の解の公式は $x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$ です。
+```
+![](/images/overleaf-tips/ex-math-inline.png)
+
+#### ディスプレイ数式
+ブロック要素的にセンタリングして数式を埋め込むときに利用します。`$$` で囲みます。
+```
+定積分の定義は
+$$
+\int_a^b f(x) dx = \lim_{n \to \infty} \sum_{i=1}^n f(x_i) \Delta x
+$$
+です。
+```
+![](/images/overleaf-tips/ex-math-display.png)
+
+### ギリシャ文字
+| 記号 | 小文字 | 大文字 | 記号 | 小文字 | 大文字 | 記号 | 小文字 | 大文字 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| $$\alpha \space \Alpha$$ | `\alpha` | `A` | $$\iota \space \Iota$$ | `\iota` | `I` | $$\rho \space \Rho$$ | `\rho` | `P` |
+| $$\beta \space \Beta$$ | `\beta` | `B` | $$\kappa \space \Kappa$$ | `\kappa` | `K` | $$\sigma \space \Sigma$$ | `\sigma` | `\Sigma` |
+| $$\gamma \space \Gamma$$ | `\gamma` | `\Gamma` | $$\lambda \space \Lambda$$ | `\lambda` | `\Lambda` | $$\tau \space \Tau$$ | `\tau` | `T` |
+| $$\delta \space \Delta$$ | `\delta` | `\Delta` | $$\mu \space \Mu$$ | `\mu` | `M` | $$\upsilon \space \Upsilon$$ | `\upsilon` | `\Upsilon` |
+| $$\epsilon \space \Epsilon$$ | `\epsilon` | `E` | $$\nu \space \Nu$$ | `\nu` | `N` | $$\phi \space \Phi$$ | `\phi` | `\Phi` |
+| $$\zeta \space \Zeta$$ | `\zeta` | `Z` | $$\xi \space \Xi$$ | `\xi` | `Xi` | $$\chi \space \Chi$$ | `\chi` | `X` |
+| $$\eta \space \Eta$$ | `\eta` | `H` | $$\omicron \space \Omicron$$ | `o` | `O` | $$\psi \space \Psi$$ | `\psi` | `\Psi` |
+| $$\theta \space \Theta$$ | `\theta` | `\Theta` | $$\pi \space \Pi$$ | `\pi` | `\Pi` | $$\omega \space \Omega$$ | `\omega` | `\Omega` |
 
 ## 表の作成
 エクセルのようなシンプルな表は下記のように作成できます。

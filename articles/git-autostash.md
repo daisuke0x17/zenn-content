@@ -26,7 +26,7 @@ git rebase --autostash
 ```
 
 ## グローバルに設定する
-`autostash`はデフォルトでは無効（`false`）になっています。なので、`pull`するときに毎回`--autostash`をつけなければなりません。これが面倒だ！というときはグローバルに設定しましょう🥳
+`autostash`はデフォルトでは無効（`false`）になっています。なので、`pull`するときに毎回`--autostash`をつけなければなりません。毎回つけるのは面倒だ！というときは、グローバルに設定してしまいましょう🥳
 ```bash
 # pull
 git config --global pull.autostash true
@@ -47,7 +47,7 @@ git rebase --no-autostash
 ```
 
 ## おまけ
-`autostash`を紹介しましたが、それでも手動で`pop`する機会はあるかと思います。`git stash list`で`stash`の一覧を確認して、`pop`したい`stash`の番号を探して、0番目を`pop`したいときは
+`autostash`を紹介しましたが、それでも手動で`pop`する機会はありますよね。`git stash list`で`stash`の一覧を確認して、`pop`したい`stash`の番号を探して、0番目を`pop`したいときは
 ```bash
 git stash pop stash@{0}
 ```

@@ -6,6 +6,16 @@ topics: ["Git"]
 published: true
 published_at: "2023-08-31 00:00"
 ---
+
+## 結論
+- `pull`のときに`--autostash`オプションをつける
+  - `pull`の前に`stash`してくれて、さらに`pull`が終わったら`pop`までしてくれます
+- グローバルに設定することもできます
+```
+git config --global pull.autostash true
+```
+※ `rebase`のときも同様に`--autostash`をつけることで`autostash`が有効になります。
+
 ## はじめに
 ローカルに未コミットの変更がある状態で`pull`することはありませんか？そんなときは`stash`して`pull`して、`pull`が終わったら`pop`していました。これがなんとも面倒ですよね。
 そんなときに便利なのがオプションがありました！`autostash`です✨ この記事では`autostash`の使い方を紹介します。

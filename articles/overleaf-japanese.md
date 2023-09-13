@@ -4,7 +4,7 @@ emoji: "🌿"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [LaTeX,Overleaf]
 published: true
-published_at: "2023-02-12 00:00"
+published_at: "2023-09-15 00:00"
 ---
 
 ## 結論

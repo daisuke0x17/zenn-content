@@ -1,5 +1,5 @@
 ---
-title: "Overleaf で日本語を使えるように設定する"
+title: "Overleaf で日本語を使えるようにする"
 emoji: "🌿"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [LaTeX,Overleaf]

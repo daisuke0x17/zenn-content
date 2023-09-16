@@ -8,7 +8,8 @@ published_at: "2023-02-12 00:00"
 ---
 
 ## はじめに
-私が所属している研究室では、論文執筆に Overleaf を利用しています。Overleaf はインストール不要で LaTeX が使えるオンラインエディタです。環境構築がないので導入ハードルは低いのですが、かっこいい表を作成したり、参考文献を表示したりするのに苦労した経験があります😅本記事では、Overleaf で論文執筆するときに私自身が詰まったポイントや Tips をまとめました！
+私が所属している研究室では、論文執筆に Overleaf を利用しています。Overleaf はインストール不要で LaTeX が使えるオンラインエディタです。環境構築がないので導入ハードルは低いのですが、かっこいい表を作成したり、参考文献を表示したりするのに苦労した経験があります😅
+本記事では、Overleaf で論文執筆するときに私自身が詰まったポイントや Tips をまとめました！
 
 ## 日本語を入力するとコンパイルエラーになる
 https://zenn.dev/daisuke23/articles/overleaf-japanese
@@ -46,7 +47,7 @@ https://zenn.dev/daisuke23/articles/overleaf-japanese
 
 https://www.tablesgenerator.com/
 
-## なぜか参考文献が表示されない
+## 参考文献が表示されない
 https://zenn.dev/daisuke23/articles/overleaf-bib
 
 ## おわりに

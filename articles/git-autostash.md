@@ -1,5 +1,5 @@
 ---
-title: "autostashでstashとpopを楽にできた"
+title: "git pull --autostashでstashとpopを自動化する"
 emoji: "🦥"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["Git"]
@@ -8,17 +8,23 @@ published_at: "2023-08-31 00:00"
 ---
 
 ## 結論
-- `pull`のときに`--autostash`オプションをつける
-  - `pull`の前に`stash`してくれて、さらに`pull`が終わったら`pop`までしてくれます
-- グローバルに設定することもできます
+- `--autostash`オプションをつけることで`pull`のときに`stash`と`pop`を自動化できます。
+```bash:e.g.
+git pull origin main --autostash
 ```
+- `--autostash`オプションをつけると以下が自動で行われます
+  1. `pull`の前にローカルに未コミットの変更があれば`stash`する
+  2. `pull`が終わったら`stash`した変更を`pop`する
+- グローバルに設定することもできます
+```bash
 git config --global pull.autostash true
 ```
 ※ `rebase`のときも同様に`--autostash`をつけることで`autostash`が有効になります。
 
 ## はじめに
 ローカルに未コミットの変更がある状態で`pull`することはありませんか？そんなときは`stash`して`pull`して、`pull`が終わったら`pop`していました。これがなんとも面倒ですよね。
-そんなときに便利なのがオプションがありました！`autostash`です✨ この記事では`autostash`の使い方を紹介します。
+そんなときに便利なオプションがありました！`autostash`です✨
+この記事では`autostash`の使い方を紹介します。
 
 ## autostash の使い方
 ### pull するとき

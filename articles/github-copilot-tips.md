@@ -42,7 +42,7 @@ https://github.blog/changelog/label/copilot/
 
 :::details Sahara-baseとは
 なかなか情報が見つかりませんでしたが、1つだけ参考になりそうな Discussion を発見しました！
-この記事によると、2023年4月の下旬ごろには既に Sahara-base が使われていそうです。
+この記事によると、2023年4月下旬ごろには既に Sahara-base が使われていそうです。
 Sahara-base は2022年初頭にトレーニングされ、2023年3月1日にモデルが更新されたとのことです。2022年初頭から存在していた Cushman-02（CodeX 派生）からのアップグレードに当たるようです。
 
 https://github.com/orgs/community/discussions/56975
@@ -118,11 +118,11 @@ https://docs.github.com/ja/copilot/configuring-github-copilot/configuring-github
 
 #### 便利ファイルのピン留め
 こちらは既に活用されている方も多いのではないでしょうか。`d.ts`ファイルやマイグレーションファイルなどギュッと情報が詰まったファイルをピン留めしましょう。
-ただし、**ピン留めしたからといって優先度が上がるわけではない**ようです。すぐにファイルを取り出せる状態にしておくが大切です。
+ただし、**ピン留めしたからといって優先度が上がるわけではない**ようです。すぐにファイルを取り出せる状態にしておくことが大切です。
 
 #### 一貫性のあるコーディングスタイル
-これが一番重要で一番難しい？ことかもしれません。「良いものを書けば良いものが返ってくる」ということです。本イベント内でも命名規則が重要であるというお話がありました。
-少ない情報で多くを伝えられるような命名を心がけたいですね！
+これが最も重要で最も難しい？ことかもしれません。「良いものを書けば良いものが返ってくる」ということです。本イベント内でも命名規則が重要であるというお話がありました。
+少ない情報量で多くを伝えられるような命名を心がけたいですね！
 
 
 ## エディタだけじゃない！GitHub Copilot X
@@ -132,7 +132,7 @@ GitHubブログによると
 https://github.blog/jp/2023-03-23-github-copilot-x-the-ai-powered-developer-experience/
 
 つまりコーディングだけでなく、開発ライフサイクル全体を通して Copilot を活用できる未来がくるということですね！
-そんな GitHub Copilot X の中からイベントでも取り上げられたもの３つ紹介します。
+そんな GitHub Copilot X の中からイベントでも取り上げられた３つを紹介します。
 
 GitHub Copilot X の 詳細 はこちら🔽
 https://github.com/features/preview/copilot-x
@@ -140,7 +140,7 @@ https://github.com/features/preview/copilot-x
 ### Copilot for the CLI
 CLI でも Copilot がつかえるようになります！AI が対話しながらコマンドの入力をサポートしてくれます。
 
-![](https://github.blog/jp/wp-content/uploads/sites/2/2023/03/Copilot-CLI-1.png?w=512L)
+![](/images/github-copilot-tips/copilot-cli.gif)
 *https://github.blog/jp/2023-03-23-github-copilot-x-the-ai-powered-developer-experience/*
 
 Waiting List への登録はこちら🔽
@@ -148,13 +148,16 @@ https://githubnext.com/projects/copilot-cli
 
 ### Copilot for Pull Requests
 Pull Request に対して Copilot がコメントを書いてくれます！AI が変更履歴を読み取って、変更内容に関連するコメントを書いてくれます。
-![](/images/github-copilot-tips/copilot-pr.png)
+![](/images/github-copilot-tips/copilot-pr.gif)
 *https://githubnext.com/projects/copilot-for-pull-requests*
 
 https://githubnext.com/projects/copilot-for-pull-requests
 
 ### Copilot for Docs
 技術系のドキュメントを学習した ChatGPTのような存在です！まずは、`Azure`,`MDN Web Docs`,`React`のドキュメントを学習したモデルが提供されるようです。
+![](/images/github-copilot-tips/copilot-docs.gif)
+*https://githubnext.com/projects/copilot-for-docs*
+
 https://githubnext.com/projects/copilot-for-docs
 
 ## 最後に

@@ -1,5 +1,5 @@
 ---
-title: "Overleaf で参考文献が表示されないときに確認すること"
+title: "Overleaf で参考文献が表示されない"
 emoji: "🌿"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [LaTeX,Overleaf]

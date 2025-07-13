@@ -33,6 +33,10 @@ GKE（Google Kubernetes Engine）で Service Mesh を運用している際、リ
 - **管理方式**: MANAGEMENT_AUTOMATIC
 - **リリースチャンネル**: Rapid
 
+:::message
+マネージド Service Mesh のリリースチャンネルは GKE クラスタのリリースチャンネルと連動しています。Service Mesh のリリースチャンネルを変更するには、まず GKE クラスタのリリースチャンネルを変更する必要があります。
+:::
+
 #### 確認コマンド
 作業前に以下のコマンドで環境を確認しました：
 
@@ -177,7 +181,7 @@ gcloud container fleet mesh update \
     --location asia-northeast1
 ```
 
-## 遭遇した問題と解決策
+## トラブルシューティング
 
 ### プロビジョニングが`STALLED`状態になる
 
@@ -224,7 +228,7 @@ dataPlaneManagement:
 **解決策:**
 istio-injection が有効な名前空間で Pod を起動することで、データプレーンが自動的に有効化される
 
-## 成功後の確認
+## 最終確認
 
 ### Service Mesh の状態確認
 

@@ -44,13 +44,13 @@ Atlantis の Webhook エンドポイントはインターネットに公開す�
 
 ## 前提知識
 
-### GitHub の IP アドレス情報
+#### GitHub の IP アドレス情報
 
 GitHub は、Webhook 配信やその他のサービスで使用する IP アドレスレンジを公開しています。これらの情報は **Meta API** (`https://api.github.com/meta`) から取得できます。
 
 Meta API からは、様々な GitHub サービスで使用される IP アドレスが取得できますが、今回必要なのは `hooks` フィールドに含まれる Webhook 配信用の IP アドレスです。
 
-### Cloud Armor とは
+#### Cloud Armor とは
 
 Cloud Armor は GCP が提供するネットワークセキュリティサービスで、DDoS 攻撃からの保護や IP アドレスベースのアクセス制御を提供します。Load Balancer や Cloud Run などと統合して使用できます。
 

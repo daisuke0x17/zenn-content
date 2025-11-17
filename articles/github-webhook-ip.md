@@ -125,10 +125,42 @@ resource "google_compute_security_policy" "webhook_policy" {
 ```
 
 この設定により、GitHub の IP アドレスからのリクエストは許可され、それ以外のリクエストは 403 エラーで拒否されます。
-私のケースでは GKE で Atlantis を動かしているため、BackendConfig を使ってポリシーを適用しました。
 
 参考：
 - [google_compute_security_policy | Resources | hashicorp/google](https://www.terraform.io/docs/providers/google/r/compute_security_policy.html)
+
+## 余談：GKE で BackendConfig を使ってポリシーを適用する
+
+私のケースでは GKE で Atlantis を動かしているため、BackendConfig を使ってセキュリティポリシーを Service にアタッチしました。
+
+BackendConfig の定義：
+```yaml
+apiVersion: cloud.google.com/v1
+kind: BackendConfig
+metadata:
+  name: atlantis-backend-config
+  namespace: atlantis
+spec:
+  securityPolicy:
+    name: "github-webhook-policy"  # 上記 Terraform で作成したポリシー名
+```
+
+Service にアタッチ：
+```yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: atlantis
+  namespace: atlantis
+  annotations:
+    cloud.google.com/backend-config: '{"default": "atlantis-backend-config"}'
+```
+
+この設定により、Ingress → Load Balancer → Service の経路で Cloud Armor のセキュリティポリシーが適用され、GitHub の IP アドレスからのリクエストのみが Atlantis に到達できるようになります。
+※ 実際には Kustomize でパッチとして適用しています。
+
+参考：
+- [Ingress の構成  |  GKE networking  |  Google Cloud Documentation](https://docs.cloud.google.com/kubernetes-engine/docs/how-to/ingress-configuration?hl=ja#configuring_ingress_features_through_backendconfig_parameters)
 
 ## おわりに
 
@@ -141,3 +173,4 @@ GitHub Webhook を受け取るサービスを構築・運用している方の�
 - [Google Cloud Armor のドキュメント | Google Cloud Documentation](https://docs.cloud.google.com/armor/docs?hl=ja)
 - [メタデータ用 REST API エンドポイント - GitHub ドキュメント](https://docs.github.com/ja/rest/meta?apiVersion=2022-11-28)
 - [google_compute_security_policy | Resources | hashicorp/google](https://www.terraform.io/docs/providers/google/r/compute_security_policy.html)
+- [Ingress の構成  |  GKE networking  |  Google Cloud Documentation](https://docs.cloud.google.com/kubernetes-engine/docs/how-to/ingress-configuration?hl=ja#configuring_ingress_features_through_backendconfig_parameters)

@@ -1,5 +1,5 @@
 ---
-title: "Atlantis のカスタムワークフローを使って環境別に承認制御する"
+title: "Atlantis のカスタムワークフローを使って環境別に apply を制御する"
 emoji: "🏝️"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["Terraform", "Atlantis"]

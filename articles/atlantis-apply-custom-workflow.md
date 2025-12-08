@@ -8,7 +8,12 @@ published: true
 
 ## 結論
 
-[環境に応じて`atlantis apply`の実行を制御するカスタムワークフロー](#解決策：カスタムワークフローで環境判定を行う)を定義することで解決できました。
+[環境に応じて`atlantis apply`の実行を制御するカスタムワークフロー](#解決策：カスタムワークフローで環境判定を行う)を定義することで
+
+- dev 環境では`atlantis apply`の実行に approve が不要
+- stg/prd 環境では`atlantis apply`の実行に approve が必須
+
+を実現しました。
 
 ## はじめに
 
